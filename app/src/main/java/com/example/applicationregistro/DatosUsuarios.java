@@ -8,25 +8,27 @@ public class DatosUsuarios implements Serializable {
     private int edad;
     private String correo;
 
-    public DatosUsuarios(String apellidos, String correo, int edad, String nombres) {
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.edad = edad;
+    public DatosUsuarios( String nombres, String apellidos,  int edad, String correo) {
         this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.edad = edad;
+        this.correo = correo;
+    }
+    public String getNombres() {
+        return nombres;
     }
     public String getApellidos() {
         return apellidos;
     }
-    public String getCorreo() {
-        return correo;
-    }
     public int getEdad() {
         return edad;
     }
-
-    public String getNombres() {
-        return nombres;
+    public String getCorreo() {
+        return correo;
     }
+
+
+
 
 
 

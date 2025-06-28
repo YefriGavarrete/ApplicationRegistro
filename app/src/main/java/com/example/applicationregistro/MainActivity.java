@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     EditText txtNombres, txtApellidos, txtCorreo, txtEdad;
     Button btnenviar;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,22 +33,27 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view  ){
                 String nombres = txtNombres.getText().toString();
                 String apellidos = txtApellidos.getText().toString();
-                int edad = Integer.parseInt(txtEdad.getText().toString());
+                String edadTexto = txtEdad.getText().toString().trim();
+                if (edadTexto.isEmpty()) {
+                    txtEdad.setError("Ingresa una edad válida");
+                    return;
+                }
+
+                int edad = Integer.parseInt(edadTexto);
+
+
                 String correo = txtCorreo.getText().toString();
 
                 DatosUsuarios persona = new DatosUsuarios(nombres, apellidos, edad, correo);
 
                 Intent intent  = new Intent(MainActivity.this, Activity_Informacion.class);
-                intent.putExtra("usuario",persona);
+                intent.putExtra("persona",persona);
                 startActivity(intent);
             }
 
         });
 
 
-
-
-        Activity_Informacion activity = new Activity_Informacion();
 
     }
 }

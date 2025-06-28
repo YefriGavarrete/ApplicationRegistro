@@ -12,9 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApplicationRegistro"
         tools:targetApi="31">
-        <activity
-            android:name=".Activity_Informacion"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -24,6 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activity_Informacion"
+            android:exported="false" />
+
     </application>
 
 </manifest>
